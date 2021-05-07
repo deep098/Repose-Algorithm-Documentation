@@ -376,6 +376,160 @@
 											</dl>
 										</dd>
 									</dl>
+									<h4>
+										5. Calculating recovery regions<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a>
+									</h4>
+								</div>
+								<div class="section" id="module-interpolate">
+									<!-- <code class="sig-prename descclassname">Movesense.</code><code class="sig-name descname">sleep_staging</code><span class="sig-paren"><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://github.com/Netrin-Org/NLSAP-server/blob/d94a2a3f945858e516f1d6c35c64967e6a58cc34/tranquil_server/algorithm/v1/movesense_read.py#L873-L1012"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#interpolate.cubicInterpolationSpectra" title="Permalink to this definition">¶</a></dt> -->
+									<code class="sig-prename descclassname">Movesense.</code><code class="sig-name descname">get_recovery_region</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="https://github.com/Netrin-Org/NLSAP-server/blob/42b9fdce17cc52ff506481762e4b542a576d19ae/tranquil_server/algorithm/v2/movesense_read.py#L530-L633"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#interpolate.cubicInterpolationSpectra" title="Permalink to this definition">¶</a>
+									<dl>
+										<dd>
+											<dl class="field-list simple">
+												<dt class="field-odd">
+													Description
+												</dt>
+												<dd class="field-odd">
+													<p>
+														Classify data based on stress-recovery levels into <br/>     
+															1) Low Recovery
+															2) Moderate Recovery
+															3) High Recovery
+														based on the RMSSD HRV parameter.
+													</p>
+												</dd>
+											
+												<dt class="field-odd">
+													Returns
+												</dt>
+												<dd class="field-odd">
+													<p>
+														recovery regions
+													</p>
+												</dd>
+											</dl>
+										</dd>
+									</dl>
+									<h4>
+										6. Calculating tag motion affected windows <a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a>
+									</h4>
+								</div>
+								<div class="section" id="module-interpolate">
+									<!-- <code class="sig-prename descclassname">Movesense.</code><code class="sig-name descname">sleep_staging</code><span class="sig-paren"><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://github.com/Netrin-Org/NLSAP-server/blob/d94a2a3f945858e516f1d6c35c64967e6a58cc34/tranquil_server/algorithm/v1/movesense_read.py#L873-L1012"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#interpolate.cubicInterpolationSpectra" title="Permalink to this definition">¶</a></dt> -->
+									<code class="sig-prename descclassname">Movesense.</code><code class="sig-name descname">tagging_motion_and_posture_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resolution=1</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://github.com/Netrin-Org/NLSAP-server/blob/42b9fdce17cc52ff506481762e4b542a576d19ae/tranquil_server/algorithm/v2/movesense_read.py#L2168-L2277"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#interpolate.cubicInterpolationSpectra" title="Permalink to this definition">¶</a>
+									<dl>
+										<dd>
+											<dl class="field-list simple">
+												<dt class="field-odd">
+													Description
+												</dt>
+												<dd class="field-odd">
+													<p>
+														Any 5 windows having step count greater than 10 are neglected and tagged as motion affected
+													</p>
+												</dd>
+												<dt class="field-even">
+													Parameters
+												</dt>
+												<dd class="field-even">
+													<ul class="simple">
+														<li>
+															<p>
+																<strong>resolution</strong> – step count values generated for every n seconds
+															</p>
+														</li>
+														
+													</ul>
+												</dd>
+												
+											</dl>
+										</dd>
+									</dl>
+
+									<h4>
+										7. Calculating sleep threshold <a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a>
+									</h4>
+								</div>
+								<div class="section" id="module-interpolate">
+									<!-- <code class="sig-prename descclassname">Movesense.</code><code class="sig-name descname">sleep_staging</code><span class="sig-paren"><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://github.com/Netrin-Org/NLSAP-server/blob/d94a2a3f945858e516f1d6c35c64967e6a58cc34/tranquil_server/algorithm/v1/movesense_read.py#L873-L1012"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#interpolate.cubicInterpolationSpectra" title="Permalink to this definition">¶</a></dt> -->
+									<code class="sig-prename descclassname">Movesense.</code><code class="sig-name descname">get_slp_thresh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stages</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://github.com/Netrin-Org/NLSAP-server/blob/42b9fdce17cc52ff506481762e4b542a576d19ae/tranquil_server/algorithm/v2/movesense_read.py#L1199-L1226"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#interpolate.cubicInterpolationSpectra" title="Permalink to this definition">¶</a>
+									<dl>
+										<dd>
+											<dl class="field-list simple">
+												<dt class="field-odd">
+													Description
+												</dt>
+												<dd class="field-odd">
+													<p>
+														Any 5 windows having step count greater than 10 are neglected and tagged as motion affected
+													</p>
+												</dd>
+												<dt class="field-even">
+													Parameters
+												</dt>
+												<dd class="field-even">
+													<ul class="simple">
+														<li>
+															<p>
+																<strong>stages</strong> – sleep stages computed every minute
+															</p>
+														</li>
+														
+													</ul>
+												</dd>
+												<dt class="field-odd">
+													Returns
+												</dt>
+												<dd class="field-odd">
+													<p>
+														recovery regions
+													</p>
+												</dd>
+											</dl>
+										</dd>
+									</dl>
+									<h4>
+										8. Calculating HR Zones <a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a>
+									</h4>
+								</div>
+								<div class="section" id="module-interpolate">
+									<!-- <code class="sig-prename descclassname">Movesense.</code><code class="sig-name descname">sleep_staging</code><span class="sig-paren"><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://github.com/Netrin-Org/NLSAP-server/blob/d94a2a3f945858e516f1d6c35c64967e6a58cc34/tranquil_server/algorithm/v1/movesense_read.py#L873-L1012"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#interpolate.cubicInterpolationSpectra" title="Permalink to this definition">¶</a></dt> -->
+									<code class="sig-prename descclassname">Movesense.</code><code class="sig-name descname">HR_Zones</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">age</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://github.com/Netrin-Org/NLSAP-server/blob/42b9fdce17cc52ff506481762e4b542a576d19ae/tranquil_server/algorithm/v2/movesense_read.py#L2322-L2343"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#interpolate.cubicInterpolationSpectra" title="Permalink to this definition">¶</a>
+									<dl>
+										<dd>
+											<dl class="field-list simple">
+												<dt class="field-odd">
+													Description
+												</dt>
+												<dd class="field-odd">
+													<p>
+														Any 5 windows having step count greater than 10 are neglected and tagged as motion affected
+													</p>
+												</dd>
+												<dt class="field-even">
+													Parameters
+												</dt>
+												<dd class="field-even">
+													<ul class="simple">
+														<li>
+															<p>
+																<strong>age</strong> – Age of the person
+															</p>
+														</li>
+														
+													</ul>
+												</dd>
+												<dt class="field-odd">
+													Returns
+												</dt>
+												<dd class="field-odd">
+													<p>
+														HR Zones
+													</p>
+												</dd>
+											</dl>
+										</dd>
+									</dl>
 								</div>
 							</div>
 							<h3>
